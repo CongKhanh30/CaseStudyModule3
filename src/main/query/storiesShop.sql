@@ -61,6 +61,8 @@ create table story
     detail    text,
     constraint fk_story primary key (storyId)
 );
+alter table story
+    add image text not null after price;
 
 # tao bang category_detail
 create table category_detail
@@ -75,3 +77,5 @@ alter table category_detail
     add constraint fk_category_detail_story foreign key (storyId) references story (storyId);
 alter table category_detail
     add constraint fk_category_detail_category foreign key (categoryId) references category (categoryId);
+alter table story
+    add image text not null after price;

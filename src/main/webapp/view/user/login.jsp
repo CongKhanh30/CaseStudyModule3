@@ -1,9 +1,9 @@
-<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Login 04</title>
+    <title>Đăng nhập</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -25,7 +25,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12 col-lg-10">
                 <div class="wrap d-md-flex">
-                    <div class="img" style="background-image: url(../img/imgLogin1.jpg);">
+                    <div class="img" style="background-image: url(../img/imgLogin.jpg);">
                     </div>
                     <div class="login-wrap p-4 p-md-5">
                         <div class="d-flex">
@@ -46,11 +46,13 @@
                         <form action="#" class="signin-form">
                             <div class="form-group mb-3">
                                 <label class="label" for="name">Tên tài khoản</label>
-                                <input type="text" id="name" class="form-control" placeholder="Nhập tên tài khoản" required>
+                                <input type="text" id="name" class="form-control" placeholder="Nhập tên tài khoản"
+                                       required>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mật khẩu</label>
-                                <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu" required>
+                                <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu"
+                                       required>
                             </div>
                             <div class="form-group">
                                 <button type="submit" class="form-control btn btn-primary rounded submit px-3">Đăng nhập
