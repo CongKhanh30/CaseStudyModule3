@@ -61,6 +61,8 @@ create table story
     detail    text,
     constraint fk_story primary key (storyId)
 );
+alter table story
+    add image text not null after price;
 
 # tao bang category_detail
 create table category_detail
