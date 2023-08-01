@@ -19,7 +19,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-6 text-center mb-5">
-                <h2 class="heading-section">Đăng nhập</h2>
+                <h2 class="heading-section">Đăng ký</h2>
             </div>
         </div>
         <div class="row justify-content-center">
@@ -30,7 +30,7 @@
                     <div class="login-wrap p-4 p-md-5">
                         <div class="d-flex">
                             <div class="w-100">
-                                <h3 class="mb-4">Đăng nhập</h3>
+                                <h3 class="mb-4">Đăng ký</h3>
                             </div>
                             <div class="w-100">
                                 <p class="social-media d-flex justify-content-end">
@@ -50,14 +50,19 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mật khẩu</label>
-                                <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu" required>
+                                <input type="password" id="password" class="form-control" placeholder="Nhập mật khẩu" onkeyup='check();' required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="label" for="confirm_password">Nhập lại mật khẩu</label>
+                                <input type="password" id="confirm_password" class="form-control" placeholder="Nhập lại mật khẩu" onkeyup='check();' required>
+                                <span id='message'></span>
                             </div>
                             <div class="form-group">
-                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Đăng nhập
+                                <button type="submit" class="form-control btn btn-primary rounded submit px-3">Đăng ký
                                 </button>
                             </div>
                         </form>
-                        <p class="text-center">Chưa có tài khoản? <a data-toggle="tab" href="#signup">Đăng ký</a></p>
+                        <p class="text-center">Đã có tài khoản? <a data-toggle="tab" href="#signup">Đăng nhập</a></p>
                     </div>
                 </div>
             </div>
@@ -66,3 +71,15 @@
 </section>
 </body>
 </html>
+<script>
+    var check = function() {
+        if (document.getElementById('password').value ==
+            document.getElementById('confirm_password').value) {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Mật khẩu xác nhận phù hợp';
+        } else {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Mật khẩu xác nhận chưa đúng';
+        }
+    }
+</script>
