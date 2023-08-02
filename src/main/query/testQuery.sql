@@ -1,47 +1,18 @@
-use stories_shop;
+use laptop_store;
 
 select user.*, role.roleName
 from user
-inner join role on user.roleId = role.roleId;
+         inner join role on user.roleId = role.roleId;
 
 insert into user(username, password, roleId)
 values (?, ?, 2);
 
-insert into category(categoryName)
-values ('Laptop Gaming');
+select product.*, brand.brandName, category.categoryName
+from (product inner join brand on brand.brandId = product.brandId)
+         inner join category on product.productId = category.categoryId;
 
-insert into category(categoryName)
-values ('Laptop Văn Phòng');
-
-insert into category(categoryName)
-values ('Laptop Ultrabook');
-
-insert into category(categoryName)
-values ('Laptop Đồ Họa');
-
-insert into category(categoryName)
-values ('Laptop Sinh Viên - Giá Rẻ');
-
-insert into brand(brandName)
-values ('ASUS');
-
-insert into brand(brandName)
-values ('Acer');
-
-insert into brand(brandName)
-values ('Dell');
-
-insert into brand(brandName)
-values ('MSI');
-
-insert into brand(brandName)
-values ('Lenovo');
-
-insert into brand(brandName)
-values ('Gigabyte');
-
-insert into brand(brandName)
-values ('HP');
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values (?, ?, ?, ?, ?, ?);
 
 insert into product(name, categoryID, brandId, detail, quantity, price)
 values ('Dell Vostro 5630', 2, 3, 'Core i5-1340P, 16GB, 512GB, Iris Xe Graphic, 16inch FHD+', 2, 17500000);
@@ -57,4 +28,3 @@ values ('Gigabyte G5 GE-51VN213SH', 4, 6, 'Core i5-12500H, 16GB, 512GB, RTX 3050
 
 insert into product(name, categoryID, brandId, detail, quantity, price)
 values ('Acer Aspire 3 A315-58-589K', 5, 2, 'Core i5-1135G7, 8GB, 256GB, Intel Iris Xe, 15.6inch FHD', 1, 11500000);
-
