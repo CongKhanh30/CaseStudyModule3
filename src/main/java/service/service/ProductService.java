@@ -46,7 +46,7 @@ public class ProductService implements IServiceCRUD<Product> {
     @Override
     public List<Product> getAll() {
         List<Product> productList = new ArrayList<>();
-        String sql = "select product.*, brand.brandName, category.categoryName from (product inner join brand on brand.brandId = product.brandId) inner join category on product.productId = category.categoryId;";
+        String sql = "select product.*, brand.brandName, category.categoryName from (product inner join brand on brand.brandId = product.brandId) inner join category on product.categoryId = category.categoryId;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
