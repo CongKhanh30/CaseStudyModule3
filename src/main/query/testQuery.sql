@@ -1,46 +1,15 @@
-use stories_shop;
+use laptop_store;
 
 select user.*, role.roleName
 from user
-inner join role on user.roleId = role.roleId;
+         inner join role on user.roleId = role.roleId;
 
 insert into user(username, password, roleId)
 values (?, ?, 2);
 
-insert into category(categoryName)
-values ('Laptop Gaming');
+select product.*, brand.brandName, category.categoryName
+from (product inner join brand on brand.brandId = product.brandId)
+         inner join category on product.productId = category.categoryId;
 
-insert into category(categoryName)
-values ('Laptop Văn Phòng');
-
-insert into category(categoryName)
-values ('Laptop Ultrabook');
-
-insert into category(categoryName)
-values ('Laptop Đồ Họa');
-
-insert into category(categoryName)
-values ('Laptop Sinh Viên - Giá Rẻ');
-
-insert into brand(brandName)
-values ('ASUS');
-
-insert into brand(brandName)
-values ('Acer');
-
-insert into brand(brandName)
-values ('Dell');
-
-insert into brand(brandName)
-values ('MSI');
-
-insert into brand(brandName)
-values ('Lenovo');
-
-insert into brand(brandName)
-values ('Gigabyte');
-
-insert into brand(brandName)
-values ('HP');
-
-
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values (?, ?, ?, ?, ?, ?);
