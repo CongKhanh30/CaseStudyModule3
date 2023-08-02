@@ -126,3 +126,5 @@ insert into product(productName, brandId, categoryId, detail, quantity, price)
 values ('Gigabyte G5 GE-51VN213SH', 6, 4, 'Core i5-12500H, 16GB, 512GB, RTX 3050 4GB, 15.6inch FHD', 50, 20000000);
 insert into product(productName, brandId, categoryId, detail, quantity, price)
 values ('Acer Aspire 3 A315-58-589K', 2, 5, 'Core i5-1135G7, 8GB, 256GB, Intel Iris Xe, 15.6inch FHD', 50, 11500000);
+
+# 16:33 02/08
