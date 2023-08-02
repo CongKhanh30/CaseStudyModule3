@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!doctype html>
 <html lang="en">
 <head>
@@ -102,27 +103,34 @@
             <div class="row main-body-position">
                 <div class="col-12 main-body">
                     <table class="body-table">
+                        <thead>
                         <tr>
-                            <td>ID</td>
-                            <td>Tên sản phẩm</td>
-                            <td>Thương hiệu</td>
-                            <td>Loại</td>
-                            <td>Mô tả</td>
-                            <td>Số lượng</td>
-                            <td>Giá</td>
-                            <td colspan="2">Action</td>
+                            <th>ID</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Thương hiệu</th>
+                            <th>Loại</th>
+                            <th>Mô tả</th>
+                            <th>Số lượng</th>
+                            <th>Giá</th>
+                            <th colspan="2">Action</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>máy tính</td>
-                            <td>Asus</td>
-                            <td>Game</td>
-                            <td class="detail">Mô tả</td>
-                            <td>5</td>
-                            <td>25000000</td>
-                            <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                            <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
-                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${productList}" var="product">
+                            <tr>
+                                <td>${product.productId}</td>
+                                <td>${product.productName}</td>
+                                <td>${product.brand.brandName}</td>
+                                <td>${product.category.categoryName}</td>
+                                <td class="detail">${product.detail}</td>
+                                <td>${product.quantity}</td>
+                                <td><fmt:formatNumber value="${product.price}"
+                                                      type="currency"/></td>
+                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
+                                <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
                     </table>
                 </div>
             </div>

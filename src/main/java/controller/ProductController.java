@@ -53,7 +53,7 @@ public class ProductController extends HttpServlet {
     private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService.getAll();
         request.setAttribute("productList", productList);
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/home.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/product.jsp");
         dispatcher.forward(request, response);
     }
 
