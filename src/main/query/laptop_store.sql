@@ -50,6 +50,7 @@ create table product
     price       double             not null,
     constraint pk_product primary key (productId)
 );
+
 alter table product
     add constraint fk_product_brand foreign key (brandId) references brand (brandId);
 alter table product
@@ -63,6 +64,7 @@ create table image
     link      text               not null,
     constraint pk_image primary key (imageId)
 );
+
 alter table image
     add constraint fk_image_product foreign key (productId) references product (productId);
 
@@ -73,7 +75,7 @@ values ('admin');
 insert into role(roleName)
 values ('customer');
 
-# tao use
+# tao user
 insert into user(username, password, roleId)
 values ('admin', 'admin', 1);
 insert into user(username, password, roleId)
