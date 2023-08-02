@@ -16,7 +16,7 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/product.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/showUser.css"/>">
     <title>Document</title>
 </head>
 <body>
@@ -27,7 +27,7 @@
                 <div class="col-12 px-0 nav-bar-logo">
                     <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" style="width: 100%" height="70px">
                 </div>
-                <a href="" class="col-12 nav-bar-list btn-color">
+                <a href="http://localhost:8080/view/product/product.jsp" class="col-12 nav-bar-list ">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-laptop"></i>
                     </div>
@@ -35,7 +35,7 @@
                         <p>Sản phẩm</p>
                     </div>
                 </a>
-                <a href="http://localhost:8080/view/user/showUser.jsp" class="col-12 nav-bar-list">
+                <a href="" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
@@ -90,13 +90,10 @@
             </div>
             <div class="row page-title">
                 <div class="col-6 text-theme">
-                    <H1>Sản phẩm</H1>
-                    <p>ADMIN > PRODUCT</p>
+                    <H1>User</H1>
+                    <p>ADMIN > User</p>
                 </div>
                 <div class="col-6">
-                    <div class="page-title--text">
-                        <a href="" class="btn btn-outline-primary">Thêm sản phẩm</a>
-                    </div>
                 </div>
             </div>
             <div class="row main-body-position">
@@ -104,24 +101,18 @@
                     <table class="body-table">
                         <tr>
                             <td>ID</td>
-                            <td>Tên sản phẩm</td>
-                            <td>Thương hiệu</td>
-                            <td>Loại</td>
-                            <td>Mô tả</td>
-                            <td>Số lượng</td>
-                            <td>Giá</td>
+                            <td>Tên User</td>
+                            <td>Mật khẩu</td>
+                            <td>Role</td>
                             <td colspan="2">Action</td>
                         </tr>
                         <tr>
                             <td>1</td>
-                            <td>máy tính</td>
-                            <td>Asus</td>
-                            <td>Game</td>
-                            <td class="detail">Mô tả</td>
-                            <td>5</td>
-                            <td>25000000</td>
+                            <td>Quang</td>
+                            <td>1</td>
+                            <td>Admin</td>
                             <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                            <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
+                            <td><a href=""class="btn btn-outline-danger">Xóa</a></td>
                         </tr>
                     </table>
                 </div>
@@ -131,4 +122,3 @@
 </div>
 </body>
 </html>
-

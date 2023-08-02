@@ -85,7 +85,7 @@ public class UserController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (userService.checkLogin(username, password)) {
-            response.sendRedirect("/");
+            response.sendRedirect("/view/product/product.jsp");
         } else {
             response.sendRedirect("/user?action=login");
         }

@@ -116,3 +116,15 @@ insert into brand(brandName)
 values ('GIGABYTE');
 insert into brand(brandName)
 values ('HP');
+
+# tao product
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Dell Vostro 5630', 3, 2, 'Core i5-1340P, 16GB, 512GB, Iris Xe Graphic, 16inch FHD+', 50, 17500000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Lenovo ThinkBook 14 G4', 5, 3, 'Core i7-1255U, 8GB, 512GB, Intel Iris Xe,14inch FHD', 50, 22000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Acer Nitro 16 2023', 2, 1, 'Core i5-13500H, 16GB, 512GB, RTX 4050 6GB, 16inch FHD+ IPS 165Hz', 50, 26000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Gigabyte G5 GE-51VN213SH', 6, 4, 'Core i5-12500H, 16GB, 512GB, RTX 3050 4GB, 15.6inch FHD', 50, 20000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Acer Aspire 3 A315-58-589K', 2, 5, 'Core i5-1135G7, 8GB, 256GB, Intel Iris Xe, 15.6inch FHD', 50, 11500000);
