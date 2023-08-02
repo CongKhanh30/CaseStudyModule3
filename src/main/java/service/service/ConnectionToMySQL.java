@@ -7,6 +7,7 @@ public class ConnectionToMySQL {
     static final String URL = "jdbc:mysql://localhost:3306/stories_shop";
     static final String USERNAME = "root";
     static final String PASSWORD = "1234";
+
     public static Connection getConnection() {
         try {
             Class.forName("com.mysql.jdbc.Driver");
