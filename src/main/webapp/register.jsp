@@ -36,7 +36,7 @@
                                 <p class="social-media d-flex justify-content-end">
                                     <a href="#"
                                        class="social-icon d-flex align-items-center justify-content-center"><span
-                                            class="fa fa-facebook"></span></a>
+                                            class="fa fa-facelaptop"></span></a>
                                     <a href="#"
                                        class="social-icon d-flex align-items-center justify-content-center"><span
                                             class="fa fa-twitter"></span></a>
@@ -49,6 +49,9 @@
                                 <input type="text" id="name" name="username" class="form-control"
                                        placeholder="Nhập tên tài khoản"
                                        required>
+                                <div class="mt-1" style="color: red">
+                                    <span><c:out value="${mess}"></c:out></span>
+                                </div>
                             </div>
                             <div class="form-group mb-3">
                                 <label class="label" for="password">Mật khẩu</label>
@@ -79,8 +82,8 @@
 </body>
 </html>
 <script>
-    var check = function () {
-        if (document.getElementById('password').value ==
+    let check = function () {
+        if (document.getElementById('password').value ===
             document.getElementById('confirm_password').value) {
             document.getElementById('message').style.color = 'green';
             document.getElementById('message').innerHTML = 'Mật khẩu xác nhận phù hợp';
@@ -90,5 +93,5 @@
             document.getElementById('message').innerHTML = 'Mật khẩu xác nhận chưa đúng';
             document.getElementById('btn-register').disabled = true;
         }
-    }
+    };
 </script>
