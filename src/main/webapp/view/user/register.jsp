@@ -62,7 +62,7 @@
                                 </button>
                             </div>
                         </form>
-                        <p class="text-center">Đã có tài khoản? <a data-toggle="tab" href="#signup">Đăng nhập</a></p>
+                        <p class="text-center">Đã có tài khoản? <a data-toggle="tab" href="http://localhost:8080/view/user/login.jsp"> Đăng nhập</a></p>
                     </div>
                 </div>
             </div>
