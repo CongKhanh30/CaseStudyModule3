@@ -8,39 +8,39 @@ insert into user(username, password, roleId)
 values (?, ?, 2);
 
 insert into category(categoryName)
-values ('Laptop Gaming'); 1
+values ('Laptop Gaming');
 
 insert into category(categoryName)
-values ('Laptop Văn Phòng'); 2
+values ('Laptop Văn Phòng');
 
 insert into category(categoryName)
-values ('Laptop Ultrabook'); 3
+values ('Laptop Ultrabook');
 
 insert into category(categoryName)
-values ('Laptop Đồ Họa'); 4
+values ('Laptop Đồ Họa');
 
 insert into category(categoryName)
-values ('Laptop Sinh Viên - Giá Rẻ'); 5
+values ('Laptop Sinh Viên - Giá Rẻ');
 
 insert into brand(brandName)
-values ('ASUS'); 1
+values ('ASUS');
 
 insert into brand(brandName)
-values ('Acer'); 2
+values ('Acer');
 
 insert into brand(brandName)
-values ('Dell'); 3
+values ('Dell');
 
 insert into brand(brandName)
-values ('MSI'); 4
+values ('MSI');
 
 insert into brand(brandName)
-values ('Lenovo'); 5
+values ('Lenovo');
 
 insert into brand(brandName)
-values ('Gigabyte'); 6
+values ('Gigabyte');
 
 insert into brand(brandName)
-values ('HP'); 7
+values ('HP');
 
 
