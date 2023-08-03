@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="" method="">
+                <form>
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">

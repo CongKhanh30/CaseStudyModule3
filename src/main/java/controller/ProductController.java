@@ -37,7 +37,7 @@ public class ProductController extends HttpServlet {
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/create.jsp");
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/addProduct.jsp");
         dispatcher.forward(request, response);
     }
 
@@ -50,7 +50,9 @@ public class ProductController extends HttpServlet {
         response.sendRedirect("/product?action=getAll");
     }
 
-    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/editProduct.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
