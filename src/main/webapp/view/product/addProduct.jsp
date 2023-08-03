@@ -19,7 +19,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/addProduct.css"/>">
-    <title>Document</title>
+    <title>Thêm Sản Phẩm</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -27,9 +27,10 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/logoshop.png"/>" alt=""
+                         href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
-                <a href="" class="col-12 nav-bar-list btn-color">
+                <a href="product?action=getAll" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-laptop"></i>
                     </div>
@@ -37,7 +38,7 @@
                         <p>Sản phẩm</p>
                     </div>
                 </a>
-                <a href="http://localhost:8080/view/user/showUser.jsp" class="col-12 nav-bar-list">
+                <a href="user?action=getAll" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
@@ -107,7 +108,7 @@
                                 <label>Nhập tên sản phẩm</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm">
+                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -141,7 +142,7 @@
                                 <label>Nhập giá tiền</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="price" placeholder="Nhập giá tiền">
+                                <input type="number" name="price" placeholder="Nhập giá tiền" required>
                             </div>
                         </div>
                     </div>
@@ -151,7 +152,7 @@
                                 <label>Nhập số lượng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="quantity" placeholder="Nhập số lượng">
+                                <input type="number" name="quantity" placeholder="Nhập số lượng" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -159,8 +160,21 @@
                                 <label>Nhập mô tả</label>
                             </div>
                             <div class="body-add_input">
-                                <textarea name="detail" rows="1" cols="53"></textarea>
+                                <textarea name="detail" rows="1" cols="53" required></textarea>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 pd-10 mg-15">
+                            <div class="body-add_text">
+                                <label>Nhập ảnh</label>
+                            </div>
+                            <div class="body-add_input">
+                                <textarea name="image" id="link" onchange="checkImage();" rows="1" cols="45"></textarea>
+                            </div>
+                        </div>
+                        <div class="col-6 mg-15">
+                                <img src="" alt="" id="image" style="width: 200px" height="200px">
                         </div>
                     </div>
                     <div class="row">
@@ -181,3 +195,8 @@
 </div>
 </body>
 </html>
+<script>
+    let checkImage = function () {
+        document.getElementById("image").src = document.getElementById("link").value;
+    }
+</script>
