@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<fmt:setLocale value="vi-VN"></fmt:setLocale>
+<fmt:setLocale value="vi-VN"/>
 <!doctype html>
 <html lang="en">
 <head>
@@ -22,6 +22,7 @@
     <title>Document</title>
 </head>
 <body>
+
 <div class="container-fluid">
     <div class="row">
         <div class="col-2 nav-bar-left">
@@ -125,8 +126,8 @@
                                 <td>${product.category.categoryName}</td>
                                 <td class="detail">${product.detail}</td>
                                 <td>${product.quantity}</td>
-                                <td><fmt:formatNumber value="${product.price}"
-                                                      type="currency"/></td>
+<%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
+                                <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
                                 <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
                                 <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
                             </tr>

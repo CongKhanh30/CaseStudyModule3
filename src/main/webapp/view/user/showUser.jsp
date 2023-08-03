@@ -27,7 +27,7 @@
                 <div class="col-12 px-0 nav-bar-logo">
                     <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" style="width: 100%" height="70px">
                 </div>
-                <a href="http://localhost:8080/view/product/product.jsp" class="col-12 nav-bar-list ">
+                <a href="http://localhost:8080/product?action=getAll" class="col-12 nav-bar-list ">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-laptop"></i>
                     </div>
