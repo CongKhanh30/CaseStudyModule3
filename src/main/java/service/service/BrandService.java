@@ -1,6 +1,7 @@
 package service.service;
 
 import model.Brand;
+import service.connect.ConnectionToMySQL;
 import service.iService.IServiceCRUD;
 
 import java.sql.Connection;

@@ -15,6 +15,20 @@ order by productId;
 insert into product(productName, brandId, categoryId, detail, quantity, price)
 values (?, ?, ?, ?, ?, ?);
 
-select * from brand;
+select *
+from brand;
 
-select * from category;
+select *
+from category;
+
+select *
+from product;
+
+update product
+set productName=?,
+    brandId=?,
+    categoryId=?,
+    detail=?,
+    quantity=?,
+    price=?
+where productId = ?;
