@@ -94,7 +94,19 @@ public class ProductController extends HttpServlet {
             case "edit":
                 editProduct(request, response);
                 break;
+            case "search":
+                searchProduct(request, response);
+                break;
         }
+    }
+
+    private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String name = request.getParameter("search");
+        List<Product> productList = productService.findByName(name);
+
+        request.setAttribute("productList", productList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/product.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {

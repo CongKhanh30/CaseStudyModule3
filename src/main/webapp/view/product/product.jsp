@@ -77,13 +77,13 @@
                     <div class="header-search_icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <form action="" method="" style="width: 100%">
+                    <form action="product?action=search" method="post" style="width: 100%">
                         <div class="search">
                             <div class="header-search_input">
-                                <input type="text" name="header-search" placeholder="Nhập tìm kiếm">
+                                <input type="text" name="search" placeholder="Nhập tìm kiếm">
                             </div>
                             <div class="header-search_btn">
-                                <button type="button" class="btn btn-secondary">Tìm kiếm</button>
+                                <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
                             </div>
                         </div>
                     </form>
