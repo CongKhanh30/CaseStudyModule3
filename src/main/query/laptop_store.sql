@@ -152,3 +152,4 @@ insert into product(productName, brandId, categoryId, detail, quantity, price)
 values ('Acer Predator Helios Neo PHN16', 2, 1, 'Intel Core i7-13700HX,RAM 16GB, 512GB, RTX 4060 8GB, 16 inch WQXGA', 5, 40000000);
 insert into product(productName, brandId, categoryId, detail, quantity, price)
 values ('MSI Stealth 16 Mercedes AMG A13VG', 4, 1, 'Intel Core i9-13900H, 32GB, 2TB, RTX 4070 8GB, 16 inch UHD+', 1, 81000000);
+# 9:13 03/08
