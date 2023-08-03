@@ -108,7 +108,7 @@
                             </div>
                             <div class="body-add_input">
                                 <input type="text" name="productName" placeholder="Nhập tên sản phẩm"
-                                       value="${product.productName}">
+                                       value="${product.productName}" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -143,7 +143,7 @@
                             </div>
                             <div class="body-add_input">
                                 <input type="number" name="price" placeholder="Nhập giá tiền"
-                                       value="<fmt:formatNumber type = "number" groupingUsed = "false" value="${product.price}"/>">
+                                       value="<fmt:formatNumber type = "number" groupingUsed = "false" value="${product.price}"/>" required>
                             </div>
                         </div>
                     </div>
@@ -154,7 +154,7 @@
                             </div>
                             <div class="body-add_input">
                                 <input type="number" name="quantity" placeholder="Nhập số lượng"
-                                       value="${product.quantity}">
+                                       value="${product.quantity}" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -162,7 +162,7 @@
                                 <label>Nhập mô tả</label>
                             </div>
                             <div class="body-add_input">
-                                <textarea name="detail" rows="1" cols="53">${product.detail}</textarea>
+                                <textarea name="detail" rows="1" cols="53" required>${product.detail}</textarea>
                             </div>
                         </div>
                     </div>

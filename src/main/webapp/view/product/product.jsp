@@ -77,9 +77,16 @@
                     <div class="header-search_icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div class="header-search_input">
-                        <input type="text" name="header-search" placeholder="Nhập tìm kiếm">
-                    </div>
+                    <form action="" method="" style="width: 100%">
+                        <div class="search">
+                            <div class="header-search_input">
+                                <input type="text" name="header-search" placeholder="Nhập tìm kiếm">
+                            </div>
+                            <div class="header-search_btn">
+                                <button type="button" class="btn btn-secondary">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-2 header-body_information">
                     <div class="header--information_icon">
@@ -97,7 +104,8 @@
                 </div>
                 <div class="col-6">
                     <div class="page-title--text">
-                        <a href="http://localhost:8080/product?action=create" class="btn btn-outline-primary">Thêm sản phẩm</a>
+                        <a href="http://localhost:8080/product?action=create" class="btn btn-outline-primary">Thêm sản
+                            phẩm</a>
                     </div>
                 </div>
             </div>
@@ -125,10 +133,12 @@
                                 <td>${product.category.categoryName}</td>
                                 <td class="detail">${product.detail}</td>
                                 <td>${product.quantity}</td>
-<%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
+                                    <%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
                                 <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
-                                <td><a href="product?action=edit&id=${product.productId}" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="product?action=delete&id=${product.productId}" class="btn btn-outline-danger">Xóa</a></td>
+                                <td><a href="product?action=edit&id=${product.productId}"
+                                       class="btn btn-outline-primary">Sửa</a></td>
+                                <td><a href="product?action=delete&id=${product.productId}"
+                                       class="btn btn-outline-danger">Xóa</a></td>
                             </tr>
                         </c:forEach>
                         </tbody>
