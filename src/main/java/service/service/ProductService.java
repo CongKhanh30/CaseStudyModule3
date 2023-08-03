@@ -18,7 +18,7 @@ public class ProductService implements IServiceCRUD<Product> {
 
     @Override
     public void add(Product product) {
-        String sql = "insert into product(productName, brandId, categoryId, detail, quantity, price) values (?,?,?,?,?,?);";
+        String sql = "insert into product(productName, brandId, categoryId, detail, quantity, price, image) values (?,?,?,?,?,?,?);";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, product.getProductName());
@@ -27,6 +27,7 @@ public class ProductService implements IServiceCRUD<Product> {
             preparedStatement.setString(4, product.getDetail());
             preparedStatement.setInt(5, product.getQuantity());
             preparedStatement.setDouble(6, product.getPrice());
+            preparedStatement.setString(7, product.getImage());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -36,7 +37,7 @@ public class ProductService implements IServiceCRUD<Product> {
 
     @Override
     public void edit(int id, Product product) {
-        String sql = "update product set productName=?, brandId=?, categoryId=?, detail=?, quantity=?, price=? where productId = ?;";
+        String sql = "update product set productName=?, brandId=?, categoryId=?, detail=?, quantity=?, price=?, image=? where productId = ?;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, product.getProductName());
@@ -45,7 +46,8 @@ public class ProductService implements IServiceCRUD<Product> {
             preparedStatement.setString(4, product.getDetail());
             preparedStatement.setInt(5, product.getQuantity());
             preparedStatement.setDouble(6, product.getPrice());
-            preparedStatement.setInt(7, id);
+            preparedStatement.setString(7, product.getImage());
+            preparedStatement.setInt(8, id);
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -84,10 +86,11 @@ public class ProductService implements IServiceCRUD<Product> {
                 String detail = resultSet.getString("detail");
                 int quantity = resultSet.getInt("quantity");
                 double price = resultSet.getDouble("price");
+                String image = resultSet.getString("image");
 
                 Brand brand = new Brand(brandId, brandName);
                 Category category = new Category(categoryId, categoryName);
-                Product product = new Product(productId, productName, brand, category, detail, quantity, price);
+                Product product = new Product(productId, productName, brand, category, detail, quantity, price, image);
 
                 productList.add(product);
             }
