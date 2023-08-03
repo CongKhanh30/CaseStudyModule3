@@ -27,7 +27,7 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt=""
+                    <img src="<c:url value = "/view/img/logoShop.jpg"/>" alt=""
                          href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
                 <a href="product?action=getAll" class="col-12 nav-bar-list btn-color">
@@ -170,13 +170,11 @@
                                 <label>Nhập ảnh</label>
                             </div>
                             <div class="body-add_input">
-                                <textarea name="image" id="link" onchange="checkImage();" rows="1" cols="53"></textarea>
+                                <textarea name="image" id="link" onchange="checkImage();" rows="1" cols="45"></textarea>
                             </div>
                         </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 pd-10 mg-15">
-                            <img src="" alt="" id="image" style="width: 200px" height="200px">
+                        <div class="col-6 mg-15">
+                                <img src="" alt="" id="image" style="width: 200px" height="200px">
                         </div>
                     </div>
                     <div class="row">

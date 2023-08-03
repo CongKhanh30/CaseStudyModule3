@@ -25,7 +25,7 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/logoShop.jpg"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
                 <a href="product?action=getAll" class="col-12 nav-bar-list ">
                     <div class="nav-bar-list_icon">
