@@ -18,7 +18,7 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/addProduct.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/editProduct.css"/>">
     <title>Document</title>
 </head>
 <body>
@@ -162,7 +162,7 @@
                     <div class="row">
                         <div class="col-12 mg-15 add-btn">
                             <div class="body-add_btn">
-                                <button type="button" class="btn btn-primary">Thêm sản phẩm</button>
+                                <button type="button" class="btn btn-primary">Sửa sản phẩm</button>
                             </div>
                             <div class="body-add_btn">
                                 <a href="http://localhost:8080/product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
