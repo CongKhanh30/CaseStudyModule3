@@ -93,23 +93,23 @@
             </div>
             <div class="row page-title">
                 <div class="col-6 text-theme">
-                    <H1>Sản phẩm</H1>
-                    <p>ADMIN > PRODUCT > ADD_PRODUCT</p>
+                    <H1>User</H1>
+                    <p>ADMIN > USER > EDIT_USER</p>
                 </div>
                 <div class="col-6">
 
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="product?action=edit&id=${product.productId}" method="post">
+                <form action="user?action=edit&id=${user.userId}" method="post">
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">
                                 <label>Nhập tên người dùng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="productName" placeholder="Nhập tên người dùng"
-                                       value="${tên}" required>
+                                <input type="text" name="username" placeholder="Nhập tên người dùng"
+                                       value="${user.username}" required>
                             </div>
                         </div>
                         <div class="col-6 pd-10 mg-15">
@@ -117,8 +117,8 @@
                                 <label>Nhập mật khẩu</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="productName" placeholder="Nhập mật khẩu"
-                                       value="${matkhau}" required>
+                                <input type="text" name="password" placeholder="Nhập mật khẩu"
+                                       value="${user.password}" required>
                             </div>
                         </div>
                     </div>
@@ -129,9 +129,9 @@
                                     <label>Chọn quyền: </label>
                                 </div>
                                 <div class="body-add_input">
-                                    <select name="brandId" id="select-brand">
-                                        <c:forEach items="${brandList}" var="brand">
-                                            <option value="${brand.brandId}">${brand.brandName}</option>
+                                    <select name="roleId" id="select-role">
+                                        <c:forEach items="${roleList}" var="role">
+                                            <option value="${role.roleId}">${role.roleName}</option>
                                         </c:forEach>
                                     </select>
                                 </div>
@@ -156,11 +156,5 @@
 </body>
 </html>
 <script>
-    document.getElementById("select-brand").value =${product.brand.brandId};
-    document.getElementById("select-category").value =${product.category.categoryId};
-
-    let checkImage = function () {
-        document.getElementById("image").src = document.getElementById("link").value;
-    }
-
+    document.getElementById("select-role").value =${user.role.roleId};
 </script>

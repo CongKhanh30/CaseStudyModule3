@@ -34,7 +34,16 @@ public class UserController extends HttpServlet {
             case "edit":
                 showFormEdit(request, response);
                 break;
+            case "delete":
+                delete(request, response);
+                break;
         }
+    }
+
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        userService.delete(id);
+        response.sendRedirect("/user?action=getAll");
     }
 
     private void showFormEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

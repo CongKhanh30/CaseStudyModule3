@@ -25,7 +25,8 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/logoShop.jpg"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/logoShop.jpg"/>" alt=""
+                         href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
                 <a href="product?action=getAll" class="col-12 nav-bar-list ">
                     <div class="nav-bar-list_icon">
@@ -112,8 +113,10 @@
                                 <td>${user.username}</td>
                                 <td>${user.password}</td>
                                 <td>${user.role.roleName}</td>
-                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
+                                <td><a href="user?action=edit&id=${user.userId}" class="btn btn-outline-primary">Sửa</a>
+                                </td>
+                                <td><a href="user?action=delete&id=${user.userId}"
+                                       class="btn btn-outline-danger">Xóa</a></td>
                             </tr>
                         </c:forEach>
                     </table>
