@@ -107,7 +107,7 @@
                                 <label>Nhập tên sản phẩm</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm">
+                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -141,7 +141,7 @@
                                 <label>Nhập giá tiền</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="price" placeholder="Nhập giá tiền">
+                                <input type="number" name="price" placeholder="Nhập giá tiền" required>
                             </div>
                         </div>
                     </div>
@@ -151,7 +151,7 @@
                                 <label>Nhập số lượng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="quantity" placeholder="Nhập số lượng">
+                                <input type="number" name="quantity" placeholder="Nhập số lượng" required>
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -159,7 +159,7 @@
                                 <label>Nhập mô tả</label>
                             </div>
                             <div class="body-add_input">
-                                <textarea name="detail" rows="1" cols="53"></textarea>
+                                <textarea name="detail" rows="1" cols="53" required></textarea>
                             </div>
                         </div>
                     </div>
