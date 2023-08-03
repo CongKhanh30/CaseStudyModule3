@@ -18,11 +18,10 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/product.css"/>">
+    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/editProduct.css"/>">
     <title>Document</title>
 </head>
 <body>
-
 <div class="container-fluid">
     <div class="row">
         <div class="col-2 nav-bar-left">
@@ -94,51 +93,86 @@
             <div class="row page-title">
                 <div class="col-6 text-theme">
                     <H1>Sản phẩm</H1>
-                    <p>ADMIN > PRODUCT</p>
+                    <p>ADMIN > PRODUCT > ADD_PRODUCT</p>
                 </div>
                 <div class="col-6">
-                    <div class="page-title--text">
-                        <a href="" class="btn btn-outline-primary">Thêm sản phẩm</a>
-                    </div>
+
                 </div>
             </div>
-            <div class="row main-body-position">
-                <div class="col-12 main-body">
-                    <table class="body-table">
-                        <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Thương hiệu</th>
-                            <th>Loại</th>
-                            <th>Mô tả</th>
-                            <th>Số lượng</th>
-                            <th>Giá</th>
-                            <th colspan="2">Action</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <c:forEach items="${productList}" var="product">
-                            <tr>
-                                <td>${product.productId}</td>
-                                <td>${product.productName}</td>
-                                <td>${product.brand.brandName}</td>
-                                <td>${product.category.categoryName}</td>
-                                <td class="detail">${product.detail}</td>
-                                <td>${product.quantity}</td>
-<%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
-                                <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
-                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="http://localhost:8080/product?action=delete&id=${product.productId}" class="btn btn-outline-danger">Xóa</a></td>
-                            </tr>
-                        </c:forEach>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="main-body-position">
+                <form action="" method="">
+                    <div class="row">
+                        <div class="col-6 pd-10 mg-15">
+                            <div class="body-add_text">
+                                <label>Nhập tên sản phẩm</label>
+                            </div>
+                            <div class="body-add_input">
+                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm">
+                            </div>
+                        </div>
+                        <div class="col-6 mg-15">
+                            <div class="body-add_text">
+                                <label>Chọn thương hiệu</label>
+                            </div>
+                            <div class="body-add_input">
+                                <select name="brandId">
+                                    <option value="1">Asus</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 pd-10 mg-15">
+                            <div class="body-add_text">
+                                <label>Chọn loại</label>
+                            </div>
+                            <div class="body-add_input">
+                                <select name="categoryId">
+                                    <option value="1">Laptop gaming</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-6 mg-15">
+                            <div class="body-add_text">
+                                <label>Nhập giá tiền</label>
+                            </div>
+                            <div class="body-add_input">
+                                <input type="number" name="price" placeholder="Nhập giá tiền">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 pd-10 mg-15">
+                            <div class="body-add_text">
+                                <label>Nhập số lượng</label>
+                            </div>
+                            <div class="body-add_input">
+                                <input type="number" name="quantity" placeholder="Nhập số lượng">
+                            </div>
+                        </div>
+                        <div class="col-6 mg-15">
+                            <div class="body-add_text">
+                                <label>Nhập mô tả</label>
+                            </div>
+                            <div class="body-add_input">
+                                <textarea name="detail" rows="1" cols="53"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 mg-15 add-btn">
+                            <div class="body-add_btn">
+                                <button type="button" class="btn btn-primary">Sửa sản phẩm</button>
+                            </div>
+                            <div class="body-add_btn">
+                                <a href="http://localhost:8080/product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
+                            </div>
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
-

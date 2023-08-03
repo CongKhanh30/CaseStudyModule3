@@ -130,3 +130,27 @@ insert into product(productName, brandId, categoryId, detail, quantity, price)
 values ('Acer Aspire 3 A315-58-589K', 2, 5, 'Core i5-1135G7, 8GB, 256GB, Intel Iris Xe, 15.6inch FHD', 50, 11500000);
 
 # 16:33 02/08
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Asus ROG Strix SCAR 17', 1, 1, 'R9-7945HX, RAM 32GB, 1TB SSD, RTX 4080, 17.3 inch WQHD', 20, 79600000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Acer Swift 3 SF314-512-56QN', 2, 3, 'Core i5-1240P,RAM 16GB, 512GB, Intel Iris Xe, 14 inch QHD IPS', 30, 18500000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('HP Pavilion 15-eg2084TU', 7, 3, 'Intel Core i5-1240P,RAM 8GB, 256GB, Intel Iris Xe, 15.6 inch FHD', 10, 15500000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('HP Envy 16-h0033TX 6K7F9PA', 7, 1, 'Core i9-12900H,RAM 16GB, 512GB, GeForce RTX 3060 6GB, 16 inch WQXGA IPS 120Hz', 10, 59000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Gigabyte G5 KF-E3VN333SH', 6, 1, 'Core i5-12500H,RAM 8GB, 512GB, RTX 4060 8GB, 15.6 inch FHD 144Hz', 25, 25200000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Lenovo Ideapad 5 Pro 16ARH7', 5, 2, 'Ryzen 5 6600HS,RAM 16GB, 512GB, RTX 3050 4GB, 16 inch 2.5K', 32, 22500000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('MSI Modern 14 C11M-011VN', 4, 5, 'Core i3-1115G4,RAM 8GB, 512GB, Intel UHD, 14 inch FHD', 5, 9900000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Dell Inspiron 14 5430 20DY3', 3, 4, '(Intel Core i7-1355U,RAM 16GB, 512GB, Intel Iris Xe, 14.0 inch FHD+', 10, 26000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Dell XPS 9320 13 Plus', 3, 4, 'Core i5-1340P,RAM 16GB, 512GB, Intel Iris Xe, 13.4 inch 3.5K OLED, Cảm ứng', 5, 52000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('ASUS TUF Gaming A15 FA507XI', 1, 1, 'Ryzen™ 9 7940HS,RAM 8GB, 512G, RTX™ 4070 8GB, 15.6-inch FHD 144Hz', 20, 38500000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('Acer Predator Helios Neo PHN16', 2, 1, 'Intel Core i7-13700HX,RAM 16GB, 512GB, RTX 4060 8GB, 16 inch WQXGA', 5, 40000000);
+insert into product(productName, brandId, categoryId, detail, quantity, price)
+values ('MSI Stealth 16 Mercedes AMG A13VG', 4, 1, 'Intel Core i9-13900H, 32GB, 2TB, RTX 4070 8GB, 16 inch UHD+', 1, 81000000);

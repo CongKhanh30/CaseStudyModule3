@@ -134,10 +134,10 @@
                         </div>
                         <div class="col-6 mg-15">
                             <div class="body-add_text">
-                                <label>Nhập mô tả</label>
+                                <label>Nhập giá tiền</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="detail" placeholder="Nhập mô tả">
+                                <input type="number" name="price" placeholder="Nhập giá tiền">
                             </div>
                         </div>
                     </div>
@@ -152,10 +152,10 @@
                         </div>
                         <div class="col-6 mg-15">
                             <div class="body-add_text">
-                                <label>Nhập giá tiền</label>
+                                <label>Nhập mô tả</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="price" placeholder="Nhập giá tiền">
+                                <textarea name="detail" rows="1" cols="53"></textarea>
                             </div>
                         </div>
                     </div>
@@ -165,7 +165,7 @@
                                 <button type="button" class="btn btn-primary">Thêm sản phẩm</button>
                             </div>
                             <div class="body-add_btn">
-                                <a href="" type="button" class="btn btn-primary">Trở lại</a>
+                                <a href="http://localhost:8080/product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
                             </div>
                         </div>
                     </div>

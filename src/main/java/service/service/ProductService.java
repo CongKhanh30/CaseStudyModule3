@@ -40,7 +40,14 @@ public class ProductService implements IServiceCRUD<Product> {
 
     @Override
     public void delete(int id) {
-
+        String sql = "delete from product where productId = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
