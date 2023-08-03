@@ -68,6 +68,68 @@ create table image
 alter table image
     add constraint fk_image_product foreign key (productId) references product (productId);
 
+
+# tao bang import
+create table import
+(
+    importId    int auto_increment  not null,
+    importDay   datetime            not null,
+    userId      int                 not null,
+    constraint pk_import primary key (importId)
+);
+
+alter table import
+    add constraint fk_import_user foreign key (userId) references user (userId);
+
+
+#tao bang order
+create table orders
+(
+    ordersId    int auto_increment  not null,
+    ordersDay   datetime            not null,
+    status      boolean             not null,
+    total       double              not null,
+    userId      int                 not null,
+    constraint pk_orders primary key (ordersId)
+);
+
+alter table orders
+    add constraint fk_orders_user foreign key (userId) references user (userId);
+
+
+#tao bang orderDetail
+create table ordersDetail
+(
+    ordersDetailId int auto_increment not null,
+    quantity       int                not null,
+    price          double             not null,
+    ordersId       int                not null,
+    productId      int                not null,
+    constraint pk_ordersDetail primary key (ordersDetailId)
+);
+
+alter table ordersDetail
+    add constraint fk_ordersDetail_orders foreign key (ordersId) references orders (ordersId);
+alter table ordersDetail
+    add constraint fk_ordersDetail_product foreign key (productId) references product (productId);
+
+
+# tao bang sales
+create table sales
+(
+  salesId       int auto_increment  not null,
+  salesStart    date                not null,
+  salesEnd      date                not null,
+  discount      double              not null,
+  productId     int                 not null,
+  constraint pk_sales primary key (salesId)
+);
+
+alter table sales
+    add constraint fk_sales_product foreign key (productId) references product (productId);
+
+
+
 # ----------------------------------------------------------
 # tao role
 insert into role(roleName)
