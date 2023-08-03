@@ -183,7 +183,6 @@ a {
 }
 
 .body-add_input input{
-    width: 70%;
     height: 30px;
     font-size: 15px;
     padding-left: 8px;
@@ -216,4 +215,14 @@ a {
     height: 50px;
     width: 120px;
     line-height: 36px;
+}
+
+.user{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-add_input{
+    width: 26%;
 }
