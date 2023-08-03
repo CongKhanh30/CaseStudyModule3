@@ -3,6 +3,8 @@ package controller;
 import model.Brand;
 import model.Category;
 import model.Product;
+import service.service.BrandService;
+import service.service.CategoryService;
 import service.service.ProductService;
 
 import javax.servlet.*;
@@ -14,6 +16,8 @@ import java.util.List;
 @WebServlet(name = "ProductController", value = "/product")
 public class ProductController extends HttpServlet {
     private ProductService productService = new ProductService();
+    private BrandService brandService = new BrandService();
+    private CategoryService categoryService = new CategoryService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -37,7 +41,13 @@ public class ProductController extends HttpServlet {
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/create.jsp");
+        List<Brand> brandList = brandService.getAll();
+        request.setAttribute("brandList", brandList);
+
+        List<Category> categoryList = categoryService.getAll();
+        request.setAttribute("categoryList", categoryList);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/addProduct.jsp");
         dispatcher.forward(request, response);
     }
 
