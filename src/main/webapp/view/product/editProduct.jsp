@@ -100,14 +100,15 @@
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="" method="">
+                <form action="product?action=edit&id=${product.productId}" method="post">
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">
                                 <label>Nhập tên sản phẩm</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm">
+                                <input type="text" name="productName" placeholder="Nhập tên sản phẩm"
+                                       value="${product.productName}">
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -115,8 +116,10 @@
                                 <label>Chọn thương hiệu</label>
                             </div>
                             <div class="body-add_input">
-                                <select name="brandId">
-                                    <option value="1">Asus</option>
+                                <select name="brandId" id="select-brand">
+                                    <c:forEach items="${brandList}" var="brand">
+                                        <option value="${brand.brandId}">${brand.brandName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -127,8 +130,10 @@
                                 <label>Chọn loại</label>
                             </div>
                             <div class="body-add_input">
-                                <select name="categoryId">
-                                    <option value="1">Laptop gaming</option>
+                                <select name="categoryId" id="select-category">
+                                    <c:forEach items="${categoryList}" var="category">
+                                        <option value="${category.categoryId}">${category.categoryName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -137,7 +142,8 @@
                                 <label>Nhập giá tiền</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="price" placeholder="Nhập giá tiền">
+                                <input type="number" name="price" placeholder="Nhập giá tiền"
+                                       value="<fmt:formatNumber type = "number" groupingUsed = "false" value="${product.price}"/>">
                             </div>
                         </div>
                     </div>
@@ -147,7 +153,8 @@
                                 <label>Nhập số lượng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="quantity" placeholder="Nhập số lượng">
+                                <input type="number" name="quantity" placeholder="Nhập số lượng"
+                                       value="${product.quantity}">
                             </div>
                         </div>
                         <div class="col-6 mg-15">
@@ -155,17 +162,17 @@
                                 <label>Nhập mô tả</label>
                             </div>
                             <div class="body-add_input">
-                                <textarea name="detail" rows="1" cols="53"></textarea>
+                                <textarea name="detail" rows="1" cols="53">${product.detail}</textarea>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 mg-15 add-btn">
                             <div class="body-add_btn">
-                                <button type="button" class="btn btn-primary">Sửa sản phẩm</button>
+                                <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
                             </div>
                             <div class="body-add_btn">
-                                <a href="http://localhost:8080/product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
+                                <a href="product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
                             </div>
                         </div>
                     </div>
@@ -176,3 +183,7 @@
 </div>
 </body>
 </html>
+<script>
+    document.getElementById("select-brand").value =${product.brand.brandId};
+    document.getElementById("select-category").value =${product.category.categoryId};
+</script>

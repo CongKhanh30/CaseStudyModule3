@@ -60,7 +60,20 @@ public class ProductController extends HttpServlet {
         response.sendRedirect("/product?action=getAll");
     }
 
-    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) {
+    private void showFormEdit(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        Product product = productService.getAll().get(productService.findIndexById(id));
+        request.setAttribute("product", product);
+
+        List<Brand> brandList = brandService.getAll();
+        request.setAttribute("brandList", brandList);
+
+        List<Category> categoryList = categoryService.getAll();
+        request.setAttribute("categoryList", categoryList);
+
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/editProduct.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -83,8 +96,22 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    private void editProduct(HttpServletRequest request, HttpServletResponse response) {
+    private void editProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int productId = Integer.parseInt(request.getParameter("id"));
+        String productName = request.getParameter("productName");
+        int brandId = Integer.parseInt(request.getParameter("brandId"));
+        int categoryId = Integer.parseInt(request.getParameter("categoryId"));
+        String detail = request.getParameter("detail");
+        int quantity = Integer.parseInt(request.getParameter("quantity"));
+        double price = Double.parseDouble(request.getParameter("price"));
 
+        Brand brand = new Brand(brandId);
+        Category category = new Category(categoryId);
+        Product product = new Product(productId, productName, brand, category, detail, quantity, price);
+
+        productService.edit(productId, product);
+
+        response.sendRedirect("product?action=getAll");
     }
 
     private void createProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
