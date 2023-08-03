@@ -159,7 +159,15 @@ a {
     padding-left: 34px;
 }
 
-.body-table tr td{
+.body-table tr{
+    background-color: white;
+    border: 1px solid black;
+    height: 50px;
+    width: 124px;
+    text-align: center;
+}
+
+td{
     background-color: white;
     border: 1px solid black;
     height: 50px;
