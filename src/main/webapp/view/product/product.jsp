@@ -97,7 +97,7 @@
                 </div>
                 <div class="col-6">
                     <div class="page-title--text">
-                        <a href="product?action=create" class="btn btn-outline-primary">Thêm sản phẩm</a>
+                        <a href="http://localhost:8080/product?action=create" class="btn btn-outline-primary">Thêm sản phẩm</a>
                     </div>
                 </div>
             </div>
