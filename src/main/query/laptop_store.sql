@@ -54,6 +54,8 @@ alter table product
     add constraint fk_product_brand foreign key (brandId) references brand (brandId);
 alter table product
     add constraint fk_product_category foreign key (categoryId) references category (categoryId);
+alter table product
+    add image text;
 
 # tao bang image
 create table image

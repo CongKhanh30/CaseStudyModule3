@@ -105,10 +105,11 @@ public class ProductController extends HttpServlet {
         String detail = request.getParameter("detail");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         double price = Double.parseDouble(request.getParameter("price"));
+        String image = request.getParameter("image");
 
         Brand brand = new Brand(brandId);
         Category category = new Category(categoryId);
-        Product product = new Product(productId, productName, brand, category, detail, quantity, price);
+        Product product = new Product(productId, productName, brand, category, detail, quantity, price, image);
 
         productService.edit(productId, product);
 
@@ -122,10 +123,11 @@ public class ProductController extends HttpServlet {
         String detail = request.getParameter("detail");
         int quantity = Integer.parseInt(request.getParameter("quantity"));
         double price = Double.parseDouble(request.getParameter("price"));
+        String image = request.getParameter("image");
 
         Brand brand = new Brand(brandId);
         Category category = new Category(categoryId);
-        Product product = new Product(productName, brand, category, detail, quantity, price);
+        Product product = new Product(productName, brand, category, detail, quantity, price, image);
 
         productService.add(product);
 

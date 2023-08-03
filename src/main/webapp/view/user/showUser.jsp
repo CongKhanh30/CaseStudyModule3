@@ -17,7 +17,7 @@
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/showUser.css"/>">
-    <title>Document</title>
+    <title>User</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -25,9 +25,9 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/imgAdmin.png"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
-                <a href="http://localhost:8080/product?action=getAll" class="col-12 nav-bar-list ">
+                <a href="product?action=getAll" class="col-12 nav-bar-list ">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-laptop"></i>
                     </div>
@@ -35,7 +35,7 @@
                         <p>Sản phẩm</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list btn-color">
+                <a href="user?action=getAll" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
@@ -106,14 +106,16 @@
                             <td>Role</td>
                             <td colspan="2">Action</td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Quang</td>
-                            <td>1</td>
-                            <td>Admin</td>
-                            <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                            <td><a href=""class="btn btn-outline-danger">Xóa</a></td>
-                        </tr>
+                        <c:forEach items="${userList}" var="user">
+                            <tr>
+                                <td>${user.userId}</td>
+                                <td>${user.username}</td>
+                                <td>${user.password}</td>
+                                <td>${user.role.roleName}</td>
+                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
+                                <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
+                            </tr>
+                        </c:forEach>
                     </table>
                 </div>
             </div>

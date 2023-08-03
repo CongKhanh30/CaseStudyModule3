@@ -17,6 +17,8 @@ public class UserController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String action = request.getParameter("action");
         switch (action) {
+            case "getAll":
+                showFormGetAll(request, response);
             case "login":
                 showFormLogin(request, response);
                 break;
@@ -27,6 +29,13 @@ public class UserController extends HttpServlet {
                 showFormRegister(request, response);
                 break;
         }
+    }
+
+    private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> userList = userService.getAll();
+        request.setAttribute("userList", userList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/showUser.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showFormLogin(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
