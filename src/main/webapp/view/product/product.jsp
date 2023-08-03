@@ -98,7 +98,7 @@
                 </div>
                 <div class="col-6">
                     <div class="page-title--text">
-                        <a href="" class="btn btn-outline-primary">Thêm sản phẩm</a>
+                        <a href="http://localhost:8080/product?action=create" class="btn btn-outline-primary">Thêm sản phẩm</a>
                     </div>
                 </div>
             </div>
@@ -128,8 +128,8 @@
                                 <td>${product.quantity}</td>
 <%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
                                 <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
-                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="http://localhost:8080/product?action=delete&id=${product.productId}" class="btn btn-outline-danger">Xóa</a></td>
+                                <td><a href="product?action=edit&id=${product.productId}" class="btn btn-outline-primary">Sửa</a></td>
+                                <td><a href="product?action=delete&id=${product.productId}" class="btn btn-outline-danger">Xóa</a></td>
                             </tr>
                         </c:forEach>
                         </tbody>

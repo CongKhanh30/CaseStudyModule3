@@ -3,6 +3,7 @@ package service.service;
 import model.Brand;
 import model.Category;
 import model.Product;
+import service.connect.ConnectionToMySQL;
 import service.iService.IServiceCRUD;
 
 import java.sql.Connection;
@@ -35,7 +36,21 @@ public class ProductService implements IServiceCRUD<Product> {
 
     @Override
     public void edit(int id, Product product) {
+        String sql = "update product set productName=?, brandId=?, categoryId=?, detail=?, quantity=?, price=? where productId = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, product.getProductName());
+            preparedStatement.setInt(2, product.getBrand().getBrandId());
+            preparedStatement.setInt(3, product.getCategory().getCategoryId());
+            preparedStatement.setString(4, product.getDetail());
+            preparedStatement.setInt(5, product.getQuantity());
+            preparedStatement.setDouble(6, product.getPrice());
+            preparedStatement.setInt(7, id);
 
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -53,7 +68,7 @@ public class ProductService implements IServiceCRUD<Product> {
     @Override
     public List<Product> getAll() {
         List<Product> productList = new ArrayList<>();
-        String sql = "select product.*, brand.brandName, category.categoryName from (product inner join brand on brand.brandId = product.brandId) inner join category on product.categoryId = category.categoryId;";
+        String sql = "select product.*, brand.brandName, category.categoryName from (product inner join brand on brand.brandId = product.brandId) inner join category on product.categoryId = category.categoryId order by productId;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -80,5 +95,14 @@ public class ProductService implements IServiceCRUD<Product> {
             throw new RuntimeException(e);
         }
         return productList;
+    }
+
+    public int findIndexById(int id) {
+        for (int i = 0; i < getAll().size(); i++) {
+            if (id == getAll().get(i).getProductId()) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

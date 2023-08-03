@@ -100,7 +100,7 @@
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="" method="">
+                <form action="product?action=create" method="post">
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">
@@ -116,7 +116,9 @@
                             </div>
                             <div class="body-add_input">
                                 <select name="brandId">
-                                    <option value="1">Asus</option>
+                                    <c:forEach items="${brandList}" var="brand">
+                                        <option value="${brand.brandId}">${brand.brandName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -128,7 +130,9 @@
                             </div>
                             <div class="body-add_input">
                                 <select name="categoryId">
-                                    <option value="1">Laptop gaming</option>
+                                    <c:forEach items="${categoryList}" var="category">
+                                        <option value="${category.categoryId}">${category.categoryName}</option>
+                                    </c:forEach>
                                 </select>
                             </div>
                         </div>
@@ -162,10 +166,11 @@
                     <div class="row">
                         <div class="col-12 mg-15 add-btn">
                             <div class="body-add_btn">
-                                <button type="button" class="btn btn-primary">Thêm sản phẩm</button>
+                                <button type="submit" class="btn btn-primary">Thêm sản phẩm</button>
                             </div>
                             <div class="body-add_btn">
-                                <a href="http://localhost:8080/product?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
+                                <a href="product?action=getAll" type="button"
+                                   class="btn btn-primary">Trở lại</a>
                             </div>
                         </div>
                     </div>
