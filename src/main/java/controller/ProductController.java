@@ -44,7 +44,10 @@ public class ProductController extends HttpServlet {
     private void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
     }
 
-    private void delete(HttpServletRequest request, HttpServletResponse response) {
+    private void delete(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id = Integer.parseInt(request.getParameter("id"));
+        productService.delete(id);
+        response.sendRedirect("/product?action=getAll");
     }
 
     private void showFormEdit(HttpServletRequest request, HttpServletResponse response) {
