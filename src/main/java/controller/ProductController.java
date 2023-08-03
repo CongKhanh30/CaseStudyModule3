@@ -28,6 +28,7 @@ public class ProductController extends HttpServlet {
                 break;
             case "create":
                 showFormCreate(request, response);
+                break;
             case "edit":
                 showFormEdit(request, response);
                 break;
