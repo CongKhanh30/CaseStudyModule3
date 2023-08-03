@@ -22,6 +22,7 @@ public class UserController extends HttpServlet {
         switch (action) {
             case "getAll":
                 showFormGetAll(request, response);
+                break;
             case "login":
                 showFormLogin(request, response);
                 break;
