@@ -170,7 +170,7 @@ a {
 td{
     background-color: white;
     border: 1px solid black;
-    height: 50px;
+    height: 75px;
     width: 124px;
     text-align: center;
 }
@@ -189,6 +189,5 @@ th{
     text-overflow: ellipsis;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
-    line-height: 50px;
     padding-left: 5px;
 }
