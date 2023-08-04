@@ -85,9 +85,6 @@ public class UserController extends HttpServlet {
     private void showFormRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> userList = userService.getAll();
         request.setAttribute("userList", userList);
-        HttpSession session = request.getSession(false);
-        User user = userService.getUser((int) session.getAttribute("userId"));
-        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/register.jsp");
         dispatcher.forward(request, response);
     }
