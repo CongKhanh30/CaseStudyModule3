@@ -1,5 +1,6 @@
 package controller;
 
+import filter.CheckRole;
 import model.Role;
 import model.User;
 import service.service.RoleService;
@@ -140,7 +141,14 @@ public class UserController extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (userService.checkLogin(username, password)) {
-            response.sendRedirect("/product?action=getAll");
+            int userId = userService.getIdUser(username, password);
+            HttpSession session = request.getSession();
+            session.setAttribute("userId", userId);
+            if (CheckRole.checkAdmin(request)) {
+                response.sendRedirect("/product?action=getAll");
+            } else {
+                response.sendRedirect("/home?action=getAll");
+            }
         } else {
             response.sendRedirect("/user?action=login");
         }

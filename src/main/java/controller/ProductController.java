@@ -1,5 +1,6 @@
 package controller;
 
+import filter.CheckRole;
 import model.Brand;
 import model.Category;
 import model.Product;
@@ -21,23 +22,28 @@ public class ProductController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String action = request.getParameter("action");
-        switch (action) {
-            case "getAll":
-                showFormGetAll(request, response);
-                break;
-            case "create":
-                showFormCreate(request, response);
-                break;
-            case "edit":
-                showFormEdit(request, response);
-                break;
-            case "delete":
-                delete(request, response);
-                break;
-            case "search":
-                showFormSearch(request, response);
-                break;
+        HttpSession session = request.getSession(false);
+        if (CheckRole.checkAdmin(request)) {
+            String action = request.getParameter("action");
+            switch (action) {
+                case "getAll":
+                    showFormGetAll(request, response);
+                    break;
+                case "create":
+                    showFormCreate(request, response);
+                    break;
+                case "edit":
+                    showFormEdit(request, response);
+                    break;
+                case "delete":
+                    delete(request, response);
+                    break;
+                case "search":
+                    showFormSearch(request, response);
+                    break;
+            }
+        } else {
+            response.sendRedirect("/user?action=login");
         }
     }
 
