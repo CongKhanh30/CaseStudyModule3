@@ -46,7 +46,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list btn-color">
+                <a href="product?action=importDetail" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>
@@ -106,16 +106,16 @@
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="product?action=create" method="post">
+                <form action="product?action=import" method="post">
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">
                                 <label>Chọn sản phẩm</label>
                             </div>
                             <div class="body-add_input">
-                                <select name="categoryId">
-                                    <c:forEach items="${categoryList}" var="category">
-                                        <option value="${category.categoryId}">${category.categoryName}</option>
+                                <select name="productId">
+                                    <c:forEach items="${productList}" var="product">
+                                        <option value="${product.productId}">${product.productName}</option>
                                     </c:forEach>
                                 </select>
                             </div>
@@ -125,7 +125,7 @@
                                 <label>Nhập số lượng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="number" name="price" placeholder="Nhập số lượng" required>
+                                <input type="number" name="quantityImport" placeholder="Nhập số lượng" required>
                             </div>
                         </div>
                     </div>
@@ -135,7 +135,7 @@
                                 <button type="submit" class="btn btn-primary">Nhập</button>
                             </div>
                             <div class="body-add_btn">
-                                <a href="" type="button"
+                                <a href="product?action=importDetail" type="button"
                                    class="btn btn-primary">Trở lại</a>
                             </div>
                         </div>
