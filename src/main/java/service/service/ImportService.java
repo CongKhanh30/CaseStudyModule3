@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.sql.Date;
 import java.util.List;
 
 public class ImportService implements IServiceCRUD<Import> {
@@ -19,13 +18,12 @@ public class ImportService implements IServiceCRUD<Import> {
 
     @Override
     public void add(Import anImport) {
-        String sql = "insert into import(userId, productId, quantityImport, dateImport) values (?, ?, ?, ?);";
+        String sql = "insert into import(userId, productId, quantityImport, dateImport) values (?, ?, ?, now());";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, anImport.getUser().getUserId());
             preparedStatement.setInt(2, anImport.getProduct().getProductId());
             preparedStatement.setInt(3, anImport.getQuantityImport());
-            preparedStatement.setDate(4, anImport.getDateImport());
 
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -57,7 +55,7 @@ public class ImportService implements IServiceCRUD<Import> {
                 int productId = resultSet.getInt("productId");
                 String productName = resultSet.getString("productName");
                 int quantityImport = resultSet.getInt("quantityImport");
-                Date dateImport = resultSet.getDate("dateImport");
+                String dateImport = resultSet.getString("dateImport");
 
                 User user = new User(userId, username);
                 Product product = new Product(productId, productName);

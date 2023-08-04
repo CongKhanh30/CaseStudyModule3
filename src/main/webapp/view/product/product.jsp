@@ -27,7 +27,8 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/logoshop.png"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/logoshop.png"/>" alt=""
+                         href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
                 <a href="product?action=getAll" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
@@ -45,7 +46,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list">
+                <a href="product?action=importDetail" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>
@@ -137,7 +138,7 @@
                                 <td>${product.category.categoryName}</td>
                                 <td class="detail">${product.detail}</td>
                                 <td>${product.quantity}</td>
-                                    <%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
+                                    <%--<td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
                                 <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
                                 <td><a href="product?action=edit&id=${product.productId}"
                                        class="btn btn-outline-primary">Sửa</a></td>
