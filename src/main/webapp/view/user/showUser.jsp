@@ -112,8 +112,10 @@
                                 <td>${user.username}</td>
                                 <td>${user.password}</td>
                                 <td>${user.role.roleName}</td>
-                                <td><a href="" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="" class="btn btn-outline-danger">Xóa</a></td>
+                                <td><a href="user?action=edit&id=${user.userId}" class="btn btn-outline-primary">Sửa</a>
+                                </td>
+                                <td><a href="user?action=delete&id=${user.userId}"
+                                       class="btn btn-outline-danger">Xóa</a></td>
                             </tr>
                         </c:forEach>
                     </table>

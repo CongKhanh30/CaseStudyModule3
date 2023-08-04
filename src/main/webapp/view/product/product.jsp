@@ -77,13 +77,13 @@
                     <div class="header-search_icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <form action="" method="" style="width: 100%">
+                    <form action="product?action=search" method="post" style="width: 100%">
                         <div class="search">
                             <div class="header-search_input">
-                                <input type="text" name="header-search" placeholder="Nhập tìm kiếm">
+                                <input type="text" name="search" placeholder="Nhập tìm kiếm">
                             </div>
                             <div class="header-search_btn">
-                                <button type="button" class="btn btn-secondary">Tìm kiếm</button>
+                                <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
                             </div>
                         </div>
                     </form>
@@ -127,15 +127,17 @@
                         <c:forEach items="${productList}" var="product">
                             <tr>
                                 <td>${product.productId}</td>
-                                <td>${product.productName}</td>
+                                <td class="nameProduct1">${product.productName}</td>
                                 <td>${product.brand.brandName}</td>
                                 <td>${product.category.categoryName}</td>
                                 <td class="detail">${product.detail}</td>
                                 <td>${product.quantity}</td>
-<%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
+                                    <%--                                <td><fmt:formatNumber value="${product.price}" type="currency"/></td>--%>
                                 <td><fmt:formatNumber value="${product.price}" type="currency" currencySymbol="đ"/></td>
-                                <td><a href="product?action=edit&id=${product.productId}" class="btn btn-outline-primary">Sửa</a></td>
-                                <td><a href="product?action=delete&id=${product.productId}" class="btn btn-outline-danger">Xóa</a></td>
+                                <td><a href="product?action=edit&id=${product.productId}"
+                                       class="btn btn-outline-primary">Sửa</a></td>
+                                <td><a href="product?action=delete&id=${product.productId}"
+                                       class="btn btn-outline-danger">Xóa</a></td>
                             </tr>
                         </c:forEach>
                         </tbody>

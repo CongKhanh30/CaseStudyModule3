@@ -94,7 +94,7 @@
             <div class="row page-title">
                 <div class="col-6 text-theme">
                     <H1>Sản phẩm</H1>
-                    <p>ADMIN > PRODUCT > ADD_PRODUCT</p>
+                    <p>ADMIN > PRODUCT > EDIT_PRODUCT</p>
                 </div>
                 <div class="col-6">
 

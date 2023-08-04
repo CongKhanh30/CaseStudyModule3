@@ -31,18 +31,36 @@ public class UserService implements IServiceCRUD<User> {
 
     @Override
     public void edit(int id, User user) {
+        String sql = "update user set username=?, password=?, roleId=? where userId=?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, user.getUsername());
+            preparedStatement.setString(2, user.getPassword());
+            preparedStatement.setInt(3, user.getRole().getRoleId());
+            preparedStatement.setInt(4, id);
 
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public void delete(int id) {
-
+        String sql = "delete from user where userId = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
     public List<User> getAll() {
         List<User> userList = new ArrayList<>();
-        String sql = "select user.*,role.roleName from user inner join role on user.roleId = role.roleId;";
+        String sql = "select user.*,role.roleName from user inner join role on user.roleId = role.roleId order by userId;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -73,5 +91,14 @@ public class UserService implements IServiceCRUD<User> {
             }
         }
         return false;
+    }
+
+    public int findIndexById(int id) {
+        for (int i = 0; i < getAll().size(); i++) {
+            if (id == getAll().get(i).getUserId()) {
+                return i;
+            }
+        }
+        return -1;
     }
 }

@@ -108,4 +108,14 @@ public class ProductService implements IServiceCRUD<Product> {
         }
         return -1;
     }
+
+    public List<Product> findByName(String name) {
+        List<Product> productList = new ArrayList<>();
+        for (Product product : getAll()) {
+            if (product.getProductName().toLowerCase().contains(name.toLowerCase())) {
+                productList.add(product);
+            }
+        }
+        return productList;
+    }
 }

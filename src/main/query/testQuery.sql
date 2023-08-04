@@ -32,3 +32,12 @@ set productName=?,
     quantity=?,
     price=?
 where productId = ?;
+
+select *
+from role;
+
+update user
+set username=?,
+    password=?,
+    roleId=?
+where userId = ?;
