@@ -45,36 +45,13 @@
                         <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
                         <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
                         <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
-                        <li><a href="#"><i class="fa fa-user"></i> Login</a></li>
+                        <li><a href="user?action=login"><i class="fa fa-user"></i> Login</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="header-right">
-                    <ul class="list-unstyled list-inline">
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
-                                    class="key">currency :</span><span class="value">USD </span><b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">USD</a></li>
-                                <li><a href="#">INR</a></li>
-                                <li><a href="#">GBP</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown dropdown-small">
-                            <a data-toggle="dropdown" data-hover="dropdown" class="dropdown-toggle" href="#"><span
-                                    class="key">language :</span><span class="value">English </span><b
-                                    class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">French</a></li>
-                                <li><a href="#">German</a></li>
-                            </ul>
-                        </li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -274,181 +251,6 @@
         </div>
     </div>
 </div>
-
-<!--    <div class="brands-area">-->
-<!--        <div class="zigzag-bottom"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-12">-->
-<!--                    <div class="brand-wrapper">-->
-<!--                        <div class="brand-list">-->
-<!--                            <img src="img/brand1.png" alt="">-->
-<!--                            <img src="img/brand2.png" alt="">-->
-<!--                            <img src="img/brand3.png" alt="">-->
-<!--                            <img src="img/brand4.png" alt="">-->
-<!--                            <img src="img/brand5.png" alt="">-->
-<!--                            <img src="img/brand6.png" alt="">-->
-<!--                            <img src="img/brand1.png" alt="">-->
-<!--                            <img src="img/brand2.png" alt="">                            -->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div> &lt;!&ndash; End brands area &ndash;&gt;-->
-
-<!--    <div class="product-widget-area">-->
-<!--        <div class="zigzag-bottom"></div>-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-md-4">-->
-<!--                    <div class="single-product-widget">-->
-<!--                        <h2 class="product-wid-title">Top Sellers</h2>-->
-<!--                        <a href="" class="wid-view-more">View All</a>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Sony Smart TV - 2015</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Apple new mac book 2015</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4">-->
-<!--                    <div class="single-product-widget">-->
-<!--                        <h2 class="product-wid-title">Recently Viewed</h2>-->
-<!--                        <a href="#" class="wid-view-more">View All</a>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Sony Smart Air Condtion</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-2.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div class="col-md-4">-->
-<!--                    <div class="single-product-widget">-->
-<!--                        <h2 class="product-wid-title">Top New</h2>-->
-<!--                        <a href="#" class="wid-view-more">View All</a>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-3.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Apple new i phone 6</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-4.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Samsung gallaxy note 4</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                        <div class="single-wid-product">-->
-<!--                            <a href="single-product.html"><img src="img/product-thumb-1.jpg" alt="" class="product-thumb"></a>-->
-<!--                            <h2><a href="single-product.html">Sony playstation microsoft</a></h2>-->
-<!--                            <div class="product-wid-rating">-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                                <i class="fa fa-star"></i>-->
-<!--                            </div>-->
-<!--                            <div class="product-wid-price">-->
-<!--                                <ins>$400.00</ins> <del>$425.00</del>-->
-<!--                            </div>                            -->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div> &lt;!&ndash; End product widget area &ndash;&gt;-->
-
 <div class="footer-top-area">
     <div class="zigzag-bottom"></div>
     <div class="container">
@@ -498,7 +300,7 @@
             <div class="col-md-3 col-sm-6">
                 <div class="footer-newsletter">
                     <h2 class="footer-wid-title">Newsletter</h2>
-                    <p>Sign up to our newsletter and get exclusive deals you wont find anywhere else straight to your
+                    <p>Sign up to our newsletter and get exclusive deals you won`t find anywhere else straight to your
                         inbox!</p>
                     <div class="newsletter-form">
                         <form action="#">

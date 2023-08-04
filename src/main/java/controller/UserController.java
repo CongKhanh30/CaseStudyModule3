@@ -64,6 +64,9 @@ public class UserController extends HttpServlet {
     private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> userList = userService.getAll();
         request.setAttribute("userList", userList);
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/showUser.jsp");
         dispatcher.forward(request, response);
     }
@@ -74,12 +77,17 @@ public class UserController extends HttpServlet {
     }
 
     private void logout(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        HttpSession session = request.getSession();
+        session.invalidate();
         response.sendRedirect("/user?action=login");
     }
 
     private void showFormRegister(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<User> userList = userService.getAll();
         request.setAttribute("userList", userList);
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/register.jsp");
         dispatcher.forward(request, response);
     }

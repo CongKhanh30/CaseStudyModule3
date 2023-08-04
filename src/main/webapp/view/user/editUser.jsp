@@ -83,11 +83,16 @@
                     </div>
                 </div>
                 <div class="col-2 header-body_information">
-                    <div class="header--information_icon">
-                        <i class="fa-solid fa-user"></i>
+                    <div class="admin">
+                        <div class="header--information_icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="header--information_text">
+                            <p>${user.username}</p>
+                        </div>
                     </div>
                     <div class="header--information_text">
-                        <p>ABC</p>
+                        <a href="user?action=logout"><p>Đăng xuất</p></a>
                     </div>
                 </div>
             </div>
