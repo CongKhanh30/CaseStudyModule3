@@ -1,14 +1,8 @@
 package controller;
 
 import filter.CheckRole;
-import model.Brand;
-import model.Category;
-import model.Product;
-import model.User;
-import service.service.BrandService;
-import service.service.CategoryService;
-import service.service.ProductService;
-import service.service.UserService;
+import model.*;
+import service.service.*;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -22,6 +16,7 @@ public class ProductController extends HttpServlet {
     private UserService userService = new UserService();
     private BrandService brandService = new BrandService();
     private CategoryService categoryService = new CategoryService();
+    private ImportService importService = new ImportService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -44,10 +39,30 @@ public class ProductController extends HttpServlet {
                 case "search":
                     showFormSearch(request, response);
                     break;
+                case "importDetail":
+                    showFormImportDetail(request, response);
+                    break;
+                case "import":
+                    showFormImportProduct(request, response);
+                    break;
             }
         } else {
             response.sendRedirect("/user?action=login");
         }
+    }
+
+    private void showFormImportProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Product> productList = productService.getAll();
+        request.setAttribute("productList", productList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/importProduct.jsp");
+        dispatcher.forward(request, response);
+    }
+
+    private void showFormImportDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<Import> importList = importService.getAll();
+        request.setAttribute("importList", importList);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/importProductBill.jsp");
+        dispatcher.forward(request, response);
     }
 
     private void showFormCreate(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -115,7 +130,14 @@ public class ProductController extends HttpServlet {
             case "search":
                 searchProduct(request, response);
                 break;
+            case "import":
+                importProduct(request, response);
+                break;
         }
+    }
+
+    private void importProduct(HttpServletRequest request, HttpServletResponse response) {
+
     }
 
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
