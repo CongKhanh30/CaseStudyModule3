@@ -18,8 +18,8 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/editUser.css"/>">
-    <title>Sửa Sản Phẩm</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/importProduct.css"/>">
+    <title>Thêm Sản Phẩm</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -38,7 +38,7 @@
                         <p>Sản phẩm</p>
                     </div>
                 </a>
-                <a href="user?action=getAll" class="col-12 nav-bar-list btn-color">
+                <a href="user?action=getAll" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
@@ -46,7 +46,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list">
+                <a href="" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>
@@ -98,58 +98,45 @@
             </div>
             <div class="row page-title">
                 <div class="col-6 text-theme">
-                    <H1>User</H1>
-                    <p>ADMIN > USER > EDIT_USER</p>
+                    <H1>Nhập sản phẩm</H1>
+                    <p>ADMIN > BILL_PRODUCT_IMPORT > IMPORT</p>
                 </div>
                 <div class="col-6">
 
                 </div>
             </div>
             <div class="main-body-position">
-                <form action="user?action=edit&id=${user.userId}" method="post">
+                <form action="product?action=create" method="post">
                     <div class="row">
                         <div class="col-6 pd-10 mg-15">
                             <div class="body-add_text">
-                                <label>Nhập tên người dùng</label>
+                                <label>Chọn sản phẩm</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="username" placeholder="Nhập tên người dùng"
-                                       value="${user.username}" required>
+                                <select name="categoryId">
+                                    <c:forEach items="${categoryList}" var="category">
+                                        <option value="${category.categoryId}">${category.categoryName}</option>
+                                    </c:forEach>
+                                </select>
                             </div>
                         </div>
-                        <div class="col-6 pd-10 mg-15">
+                        <div class="col-6 mg-15">
                             <div class="body-add_text">
-                                <label>Nhập mật khẩu</label>
+                                <label>Nhập số lượng</label>
                             </div>
                             <div class="body-add_input">
-                                <input type="text" name="password" placeholder="Nhập mật khẩu"
-                                       value="${user.password}" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mg-15">
-                            <div class="user">
-                                <div class="body-add_text">
-                                    <label>Chọn quyền: </label>
-                                </div>
-                                <div class="body-add_input">
-                                    <select name="roleId" id="select-role">
-                                        <c:forEach items="${roleList}" var="role">
-                                            <option value="${role.roleId}">${role.roleName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
+                                <input type="number" name="price" placeholder="Nhập số lượng" required>
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-12 mg-15 add-btn">
                             <div class="body-add_btn">
-                                <button type="submit" class="btn btn-primary">Sửa người dùng</button>
+                                <button type="submit" class="btn btn-primary">Nhập</button>
                             </div>
                             <div class="body-add_btn">
-                                <a href="user?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
+                                <a href="" type="button"
+                                   class="btn btn-primary">Trở lại</a>
                             </div>
                         </div>
                     </div>
@@ -160,6 +147,3 @@
 </div>
 </body>
 </html>
-<script>
-    document.getElementById("select-role").value =${user.role.roleId};
-</script>

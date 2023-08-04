@@ -18,8 +18,8 @@
             integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/editUser.css"/>">
-    <title>Sửa Sản Phẩm</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value = "/view/css/product.css"/>">
+    <title>Sản phẩm</title>
 </head>
 <body>
 <div class="container-fluid">
@@ -27,8 +27,7 @@
         <div class="col-2 nav-bar-left">
             <div class="row">
                 <div class="col-12 px-0 nav-bar-logo">
-                    <img src="<c:url value = "/view/img/logoshop.png"/>" alt=""
-                         href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
+                    <img src="<c:url value = "/view/img/logoshop.png"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
                 <a href="product?action=getAll" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
@@ -38,7 +37,7 @@
                         <p>Sản phẩm</p>
                     </div>
                 </a>
-                <a href="user?action=getAll" class="col-12 nav-bar-list btn-color">
+                <a href="user?action=getAll" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-circle-user"></i>
                     </div>
@@ -46,7 +45,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list">
+                <a href="" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>
@@ -78,9 +77,16 @@
                     <div class="header-search_icon">
                         <i class="fa-solid fa-magnifying-glass"></i>
                     </div>
-                    <div class="header-search_input">
-                        <input type="text" name="header-search" placeholder="Nhập tìm kiếm">
-                    </div>
+                    <form action="product?action=search" method="post" style="width: 100%">
+                        <div class="search">
+                            <div class="header-search_input">
+                                <input type="text" name="search" placeholder="Nhập tìm kiếm">
+                            </div>
+                            <div class="header-search_btn">
+                                <button type="submit" class="btn btn-secondary">Tìm kiếm</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
                 <div class="col-2 header-body_information">
                     <div class="admin">
@@ -98,68 +104,44 @@
             </div>
             <div class="row page-title">
                 <div class="col-6 text-theme">
-                    <H1>User</H1>
-                    <p>ADMIN > USER > EDIT_USER</p>
+                    <H1>Hóa đơn nhập sản phẩm</H1>
+                    <p>ADMIN > BILL_PRODUCT_IMPORT</p>
                 </div>
                 <div class="col-6">
-
+                    <div class="page-title--text">
+                        <a href="product?action=create" class="btn btn-outline-primary">Nhập sản phẩm</a>
+                    </div>
                 </div>
             </div>
-            <div class="main-body-position">
-                <form action="user?action=edit&id=${user.userId}" method="post">
-                    <div class="row">
-                        <div class="col-6 pd-10 mg-15">
-                            <div class="body-add_text">
-                                <label>Nhập tên người dùng</label>
-                            </div>
-                            <div class="body-add_input">
-                                <input type="text" name="username" placeholder="Nhập tên người dùng"
-                                       value="${user.username}" required>
-                            </div>
-                        </div>
-                        <div class="col-6 pd-10 mg-15">
-                            <div class="body-add_text">
-                                <label>Nhập mật khẩu</label>
-                            </div>
-                            <div class="body-add_input">
-                                <input type="text" name="password" placeholder="Nhập mật khẩu"
-                                       value="${user.password}" required>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mg-15">
-                            <div class="user">
-                                <div class="body-add_text">
-                                    <label>Chọn quyền: </label>
-                                </div>
-                                <div class="body-add_input">
-                                    <select name="roleId" id="select-role">
-                                        <c:forEach items="${roleList}" var="role">
-                                            <option value="${role.roleId}">${role.roleName}</option>
-                                        </c:forEach>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 mg-15 add-btn">
-                            <div class="body-add_btn">
-                                <button type="submit" class="btn btn-primary">Sửa người dùng</button>
-                            </div>
-                            <div class="body-add_btn">
-                                <a href="user?action=getAll" type="button" class="btn btn-primary">Trở lại</a>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+            <div class="row main-body-position">
+                <div class="col-12 main-body">
+                    <table class="body-table">
+                        <thead>
+                        <tr>
+                            <th>ID hóa đơn</th>
+                            <th>Tên người nhập</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Số lượng nhập</th>
+                            <th>Ngày nhập</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <c:forEach items="${productList}" var="product">
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
 </body>
 </html>
-<script>
-    document.getElementById("select-role").value =${user.role.roleId};
-</script>
+
