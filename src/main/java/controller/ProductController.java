@@ -4,9 +4,11 @@ import filter.CheckRole;
 import model.Brand;
 import model.Category;
 import model.Product;
+import model.User;
 import service.service.BrandService;
 import service.service.CategoryService;
 import service.service.ProductService;
+import service.service.UserService;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -17,12 +19,13 @@ import java.util.List;
 @WebServlet(name = "ProductController", value = "/product")
 public class ProductController extends HttpServlet {
     private ProductService productService = new ProductService();
+    private UserService userService = new UserService();
     private BrandService brandService = new BrandService();
     private CategoryService categoryService = new CategoryService();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        HttpSession session = request.getSession(false);
+//        HttpSession session = request.getSession(false);
         if (CheckRole.checkAdmin(request)) {
             String action = request.getParameter("action");
             switch (action) {
@@ -53,7 +56,9 @@ public class ProductController extends HttpServlet {
 
         List<Category> categoryList = categoryService.getAll();
         request.setAttribute("categoryList", categoryList);
-
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/addProduct.jsp");
         dispatcher.forward(request, response);
     }
@@ -79,6 +84,10 @@ public class ProductController extends HttpServlet {
         List<Category> categoryList = categoryService.getAll();
         request.setAttribute("categoryList", categoryList);
 
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
+
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/editProduct.jsp");
         dispatcher.forward(request, response);
     }
@@ -86,6 +95,9 @@ public class ProductController extends HttpServlet {
     private void showFormGetAll(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService.getAll();
         request.setAttribute("productList", productList);
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/product.jsp");
         dispatcher.forward(request, response);
     }
@@ -109,8 +121,11 @@ public class ProductController extends HttpServlet {
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("search");
         List<Product> productList = productService.findByName(name);
-
         request.setAttribute("productList", productList);
+
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/product.jsp");
         dispatcher.forward(request, response);
     }

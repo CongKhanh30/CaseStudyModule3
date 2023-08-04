@@ -86,11 +86,11 @@
                             <i class="fa-solid fa-user"></i>
                         </div>
                         <div class="header--information_text">
-                            <p>ABC</p>
+                            <p>${user.username}</p>
                         </div>
                     </div>
                     <div class="header--information_text">
-                        <a href=""><p>Đăng xuất</p></a>
+                        <a href="user?action=logout"><p>Đăng xuất</p></a>
                     </div>
                 </div>
             </div>

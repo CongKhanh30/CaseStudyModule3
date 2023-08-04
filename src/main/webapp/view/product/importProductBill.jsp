@@ -29,7 +29,7 @@
                 <div class="col-12 px-0 nav-bar-logo">
                     <img src="<c:url value = "/view/img/logoshop.png"/>" alt="" href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
-                <a href="product?action=getAll" class="col-12 nav-bar-list btn-color">
+                <a href="product?action=getAll" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-laptop"></i>
                     </div>
@@ -45,7 +45,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list">
+                <a href="" class="col-12 nav-bar-list btn-color">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>
@@ -89,11 +89,16 @@
                     </form>
                 </div>
                 <div class="col-2 header-body_information">
-                    <div class="header--information_icon">
-                        <i class="fa-solid fa-user"></i>
+                    <div class="admin">
+                        <div class="header--information_icon">
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                        <div class="header--information_text">
+                            <p>${user.username}</p>
+                        </div>
                     </div>
                     <div class="header--information_text">
-                        <p>ABC</p>
+                        <a href="user?action=logout"><p>Đăng xuất</p></a>
                     </div>
                 </div>
             </div>
