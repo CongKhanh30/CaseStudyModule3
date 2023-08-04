@@ -127,7 +127,7 @@
                         <c:forEach items="${productList}" var="product">
                             <tr>
                                 <td>${product.productId}</td>
-                                <td>${product.productName}</td>
+                                <td class="nameProduct1">${product.productName}</td>
                                 <td>${product.brand.brandName}</td>
                                 <td>${product.category.categoryName}</td>
                                 <td class="detail">${product.detail}</td>
