@@ -101,4 +101,22 @@ public class UserService implements IServiceCRUD<User> {
         }
         return -1;
     }
+
+    public int getIdUser(String username, String password) {
+        for (User user : getAll()) {
+            if (user.getUsername().equals(username) && user.getPassword().equals(password)) {
+                return user.getUserId();
+            }
+        }
+        return -1;
+    }
+
+    public User getUser(int id) {
+        for (User user : getAll()) {
+            if (user.getUserId() == id) {
+                return user;
+            }
+        }
+        return null;
+    }
 }
