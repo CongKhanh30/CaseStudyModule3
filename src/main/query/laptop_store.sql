@@ -68,6 +68,21 @@ create table image
 alter table image
     add constraint fk_image_product foreign key (productId) references product (productId);
 
+# tao bang import
+create table import
+(
+    importId       int auto_increment not null,
+    userId         int                not null,
+    productId      int                not null,
+    quantityImport int                not null,
+    dateImport     datetime           not null,
+    constraint pk_import primary key (importId)
+);
+alter table import
+    add constraint fk_import_user foreign key (userId) references user (userId);
+alter table import
+    add constraint fk_import_product foreign key (productId) references product (productId);
+
 # ----------------------------------------------------------
 # tao role
 insert into role(roleName)

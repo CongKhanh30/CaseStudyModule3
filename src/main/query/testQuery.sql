@@ -41,3 +41,11 @@ set username=?,
     password=?,
     roleId=?
 where userId = ?;
+
+insert into import(userId, productId, quantityImport, dateImport)
+values (1, 1, 10, now());
+
+select import.*, user.username, product.productName
+from (import inner join user on import.userId = user.userId)
+         inner join product on import.productId = product.productId
+order by importId;
