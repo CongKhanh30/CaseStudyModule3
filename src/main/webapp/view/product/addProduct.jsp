@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-2 nav-bar-left">
             <div class="row">
-                <div class="col-12 px-0 nav-bar-logo">
+                <div class="col-12 px-0 nav-bar-logo">c
                     <img src="<c:url value = "/view/img/logoshop.png"/>" alt=""
                          href="http://localhost:8080/product?action=getAll" style="width: 100%" height="70px">
                 </div>
