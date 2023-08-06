@@ -42,9 +42,6 @@
                 <div class="user-menu">
                     <ul>
                         <li><a href="#"><i class="fa fa-user"></i> My Account</a></li>
-                        <li><a href="#"><i class="fa fa-heart"></i> Wishlist</a></li>
-                        <li><a href="cart.html"><i class="fa fa-user"></i> My Cart</a></li>
-                        <li><a href="checkout.html"><i class="fa fa-user"></i> Checkout</a></li>
                         <li><a href="user?action=login"><i class="fa fa-user"></i> Login</a></li>
                     </ul>
                 </div>
@@ -63,7 +60,7 @@
         <div class="row">
             <div class="col-sm-6">
                 <div class="logo">
-                    <h1><a href="./"><img src="<c:url value = "/view/img/logoshop.png"/>" style="width: 176px;"></a>
+                    <h1><a href="http://localhost:8080/home?action=getAllLogged"><img src="<c:url value = "/view/img/logoshop.png"/>" style="width: 176px;"></a>
                     </h1>
                 </div>
             </div>
@@ -94,11 +91,11 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="index.html">Home</a></li>
-                    <li><a href="shop.html">Shop page</a></li>
-                    <li><a href="single-product.html">Single product</a></li>
-                    <li><a href="cart.html">Cart</a></li>
-                    <li><a href="checkout.html">Checkout</a></li>
+                    <li><a href="http://localhost:8080/home?action=getAllLogged">Home</a></li>
+                    <li><a href="#">Shop page</a></li>
+                    <li><a href="#">Single product</a></li>
+                    <li class="active"><a href="http://localhost:8080/cart?action=showCart">Cart</a></li>
+                    <li><a href="#">Checkout</a></li>
                     <li><a href="#">Category</a></li>
                     <li><a href="#">Others</a></li>
                     <li><a href="#">Contact</a></li>
