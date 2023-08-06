@@ -83,6 +83,24 @@ alter table import
 alter table import
     add constraint fk_import_product foreign key (productId) references product (productId);
 
+# tao trigger khi import product
+delimiter //
+create trigger update_quantity_after_insert_import
+    after insert
+    on import
+    for each row
+begin
+    declare product_quantity int;
+    select product.quantity into product_quantity from product where product.productId = NEW.productId;
+    if product_quantity is not null then
+        update product
+        set product.quantity=product.quantity + NEW.quantityImport
+        where product.productId = NEW.productId;
+    end if;
+end;
+// delimiter ;
+
+
 # ----------------------------------------------------------
 # tao role
 insert into role(roleName)
