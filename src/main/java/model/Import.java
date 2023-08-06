@@ -1,16 +1,19 @@
 package model;
 
-
-import java.sql.Date;
-
 public class Import {
     private int importId;
     private User user;
     private Product product;
     private int quantityImport;
-    private Date dateImport;
+    private String dateImport;
 
-    public Import(int importId, User user, Product product, int quantityImport, Date dateImport) {
+    public Import(User user, Product product, int quantityImport) {
+        this.user = user;
+        this.product = product;
+        this.quantityImport = quantityImport;
+    }
+
+    public Import(int importId, User user, Product product, int quantityImport, String dateImport) {
         this.importId = importId;
         this.user = user;
         this.product = product;
@@ -50,11 +53,11 @@ public class Import {
         this.quantityImport = quantityImport;
     }
 
-    public Date getDateImport() {
+    public String getDateImport() {
         return dateImport;
     }
 
-    public void setDateImport(Date dateImport) {
+    public void setDateImport(String dateImport) {
         this.dateImport = dateImport;
     }
 }

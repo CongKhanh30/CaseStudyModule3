@@ -46,7 +46,7 @@
                         <p>User</p>
                     </div>
                 </a>
-                <a href="" class="col-12 nav-bar-list">
+                <a href="product?action=importDetail" class="col-12 nav-bar-list">
                     <div class="nav-bar-list_icon">
                         <i class="fa-solid fa-file-import"></i>
                     </div>

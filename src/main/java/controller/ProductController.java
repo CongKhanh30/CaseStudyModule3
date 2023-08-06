@@ -54,6 +54,9 @@ public class ProductController extends HttpServlet {
     private void showFormImportProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Product> productList = productService.getAll();
         request.setAttribute("productList", productList);
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/importProduct.jsp");
         dispatcher.forward(request, response);
     }
@@ -61,6 +64,9 @@ public class ProductController extends HttpServlet {
     private void showFormImportDetail(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Import> importList = importService.getAll();
         request.setAttribute("importList", importList);
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        request.setAttribute("user", user);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/product/importProductBill.jsp");
         dispatcher.forward(request, response);
     }
@@ -136,8 +142,17 @@ public class ProductController extends HttpServlet {
         }
     }
 
-    private void importProduct(HttpServletRequest request, HttpServletResponse response) {
+    private void importProduct(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        HttpSession session = request.getSession(false);
+        User user = userService.getUser((int) session.getAttribute("userId"));
+        int productId = Integer.parseInt(request.getParameter("productId"));
+        int quantityImport = Integer.parseInt(request.getParameter("quantityImport"));
 
+        Product product = new Product(productId, "");
+        Import newImport = new Import(user, product, quantityImport);
+
+        importService.add(newImport);
+        response.sendRedirect("product?action=importDetail");
     }
 
     private void searchProduct(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -152,7 +152,7 @@ public class UserController extends HttpServlet {
             if (CheckRole.checkAdmin(request)) {
                 response.sendRedirect("/product?action=getAll");
             } else {
-                response.sendRedirect("/home?action=getAll");
+                response.sendRedirect("/home?action=getAllLogged");
             }
         } else {
             response.sendRedirect("/user?action=login");
