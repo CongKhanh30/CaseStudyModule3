@@ -86,7 +86,7 @@ public class UserController extends HttpServlet {
         List<User> userList = userService.getAll();
         request.setAttribute("userList", userList);
         RequestDispatcher dispatcher = request.getRequestDispatcher("view/user/register.jsp");
-        dispatcher.forward(request, response);
+        dispatcher.forward(request, response);g
     }
 
     @Override
