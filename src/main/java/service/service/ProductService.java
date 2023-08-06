@@ -118,4 +118,25 @@ public class ProductService implements IServiceCRUD<Product> {
         }
         return productList;
     }
+
+    public Product findProductById(int id) {
+        String sql = "select * from product where productId = ?;";
+        Product product = null;
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                String productName = resultSet.getString("productName");
+                String detail = resultSet.getString("detail");
+                int quantity = resultSet.getInt("quantity");
+                double price = resultSet.getDouble("price");
+                String image = resultSet.getString("image");
+                product = new Product(id, productName, detail, quantity, price, image);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return product;
+    }
 }
