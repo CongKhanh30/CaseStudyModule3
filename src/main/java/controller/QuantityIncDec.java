@@ -27,7 +27,7 @@ public class QuantityIncDec extends HttpServlet {
             if (action != null && id >= 1) {
                 if (action.equals("inc")) {
                     for (Cart c : cart_list) {
-                        if (c.getId() == id) {
+                        if (c.getProductId() == id) {
                             int quantity = c.getQuantity();
                             quantity++;
                             c.setQuantity(quantity);
@@ -38,7 +38,7 @@ public class QuantityIncDec extends HttpServlet {
 
                 if (action.equals("dec")) {
                     for (Cart c : cart_list) {
-                        if (c.getId() == id && c.getQuantity() > 1) {
+                        if (c.getProductId() == id && c.getQuantity() > 1) {
                             int quantity = c.getQuantity();
                             quantity--;
                             c.setQuantity(quantity);

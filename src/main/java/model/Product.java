@@ -1,71 +1,89 @@
 package model;
 
 public class Product {
-    private int id;
-    private String name;
-    private String category;
-    private Double price;
-    private String image;
+    private int productId;
+    private String productName;
+    private Brand brand;
+    private Category category;
+    private String detail;
+    private int quantity;
+    private double price;
 
     public Product() {
     }
 
-    public Product(int id, String name, String category, Double price, String image) {
-        this.id = id;
-        this.name = name;
+    public Product(String productName, Brand brand, Category category, String detail, int quantity, double price) {
+        this.productName = productName;
+        this.brand = brand;
         this.category = category;
+        this.detail = detail;
+        this.quantity = quantity;
         this.price = price;
-        this.image = image;
     }
 
-    public int getId() {
-        return id;
+    public Product(int productId, String productName, Brand brand, Category category, String detail, int quantity, double price) {
+        this.productId = productId;
+        this.productName = productName;
+        this.brand = brand;
+        this.category = category;
+        this.detail = detail;
+        this.quantity = quantity;
+        this.price = price;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public int getProductId() {
+        return productId;
     }
 
-    public String getName() {
-        return name;
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public String getProductName() {
+        return productName;
     }
 
-    public String getCategory() {
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    public Brand getBrand() {
+        return brand;
+    }
+
+    public void setBrand(Brand brand) {
+        this.brand = brand;
+    }
+
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 
-    public Double getPrice() {
+    public String getDetail() {
+        return detail;
+    }
+
+    public void setDetail(String detail) {
+        this.detail = detail;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
-    }
-
-    public String getImage() {
-        return image;
-    }
-
-    public void setImage(String image) {
-        this.image = image;
-    }
-
-    @Override
-    public String toString() {
-        return "Product{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", category='" + category + '\'' +
-                ", price=" + price +
-                ", image='" + image + '\'' +
-                '}';
     }
 }

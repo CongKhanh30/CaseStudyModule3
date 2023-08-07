@@ -29,7 +29,7 @@ public class OrderDao {
         try {
             query = "insert into orders (p_id, u_id, o_quantity, o_date) values(?,?,?,?)";
             pst = this.con.prepareStatement(query);
-            pst.setInt(1, model.getId());
+            pst.setInt(1, model.getProductId());
             pst.setInt(2, model.getUid());
             pst.setInt(3, model.getquantity());
             pst.setString(4, model.getDate());
@@ -55,8 +55,8 @@ public class OrderDao {
                 int pId = rs.getInt("p_id");
                 Product product = productDao.getSingleProduct(pId);
                 order.setOrderId(rs.getInt("o_id"));
-                order.setId(pId);
-                order.setName(product.getName());
+                order.setProductId(pId);
+                order.setProductName(product.getProductName());
                 order.setCategory(product.getCategory());
                 order.setPrice(product.getPrice()*rs.getInt("o_quantity"));
                 order.setquantity(rs.getInt("o_quantity"));
